@@ -88,6 +88,28 @@ class BankController extends Controller
         }
     }
 
+    /* private function getBilletes($cantidad, $number = 0, $msm = '', $i = 0){
+        try {
+            $listBilletes = array(50000,20000,10000,5000,1000);
+            $billete = $listBilletes[$i];
+
+            if($cantidad >= $billete){
+                $number     = intval($cantidad/$billete);
+                $cantidad   = $cantidad % $billete;
+
+                $msm .= $number . ' billete' . (($number > 1 ) ? 's':'') . ' de $' . number_format($billete,0,'.',',') . '<br>';
+            }
+
+            if($i == (count($listBilletes)-1)){
+                return $msm;
+            }
+
+            return $this->getBilletes($cantidad, $number, $msm, ($i+1));
+        } catch (\Throwable $th) {
+            throw new Exception($th->getMessage());
+        }
+    } */
+
     private function saveHistorial($cantidad, $estado){
         try {
             $historial = new Historial();
